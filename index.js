@@ -1,30 +1,21 @@
+/*
 
-//let is a keyword used to declare variable which can overright during execution and afterwards. 
-let myName = "Shubham Gupta";
-console.log(myName);
- 
-//const is also a keyword used to declare constant variables, which can't be changed.
-const age  = 21;
-console.log(age);
+// so basically DOM is used to overright or modify something in our website 
+// this help us to modify or change some objects in our website according to our need.
+// basically it uses querySelector function to select any particular class,id, tag or any element. 
+// its syntac is as follows 
+let title = document.querySelector("title");
+// console.log(title.innerText);
+title.innerText = "Riya-Shubham";
+// console.log(title.innerText);
 
-const degreee = "MCA";
-console.log(degreee);
+// also we can use getattribute or setattribute when we use innerHTML for changing tags and other things.
 
 
-//here index starts from 0 therefore i add 1 in my index. 
-console.log("index of 'b' is : ",myName.indexOf("b")+1);
+*/
 
-//Gives the last occuring index of the word which we want to find.
-console.log("last index of 'h' is : ",myName.lastIndexOf('h')+1);
 
-//Replace my string with another string or char.
-console.log("After replacing my name : ",myName.replace("Shubham Gupta","Riya Goel"));
-
-//gives me the substring in between the range i given in it.
-console.log("substring of my name at index 1,4 is: ",myName.substring(1,4));
-
-//return bool value if it starts with 'S'.
-console.log("Is my name starts with 'S' : ",myName.startsWith("S"));
-
-//return bool value if it include 'Gupta'.
-console.log("Does my name includes 'Gupta' in it : ",myName.includes("Gupta"));
+const addProductButton = document.querySelector("button");
+addProductButton.addEventListener("click",()=>{
+    addProductButton.setAttribute("style","display: none");
+});
