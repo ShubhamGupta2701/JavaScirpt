@@ -1,21 +1,40 @@
-/*
+const form = document.querySelector(".feedback-form");
+const p = document.querySelector("p");
 
-// so basically DOM is used to overright or modify something in our website 
-// this help us to modify or change some objects in our website according to our need.
-// basically it uses querySelector function to select any particular class,id, tag or any element. 
-// its syntac is as follows 
-let title = document.querySelector("title");
-// console.log(title.innerText);
-title.innerText = "Riya-Shubham";
-// console.log(title.innerText);
+const usernamePtr = /^[a-zA-Z0-9]{6,20}$/;
+const feedbackPtr = /^.{20,100}$/;
+form.addEventListener("submit",(event)=>{
+    event.preventDefault(); 
+    const userresult = usernamePtr.test(form.username.value);
+    const feedbackresult = feedbackPtr.test(form.feedback.value);
 
-// also we can use getattribute or setattribute when we use innerHTML for changing tags and other things.
+    if(userresult && feedbackresult){
+        p.setAttribute("class","success");
+        p.textContent = "Feedback submitted successfully, ThankYou!!...";
+    }
+    else{
+        p.setAttribute("class","error");
+        p.textContent = "Please check username and  feedback correctly!!...";
+    }
+});
+
+form.username.addEventListener("keyup",(event)=>{
+    const userresult = usernamePtr.test(event.target.value);
+    if(userresult){
+        form.username.setAttribute("class","accepted");
+    }
+    else{
+        form.username.setAttribute("class","rejected");
+    }
+});
 
 
-*/
-
-
-const addProductButton = document.querySelector("button");
-addProductButton.addEventListener("click",()=>{
-    addProductButton.setAttribute("style","display: none");
+form.feedback.addEventListener("keyup",(event)=>{
+    const feedbackresult = feedbackPtr.test(event.target.value);
+    if(feedbackresult){
+        form.feedback.setAttribute("class","accepted");
+    }
+    else{
+        form.feedback.setAttribute("class","rejected");
+    }
 });
