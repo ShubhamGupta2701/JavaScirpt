@@ -6,8 +6,7 @@
 // its syntac is as follows 
 let title = document.querySelector("title");
 // console.log(title.innerText);
-title.innerText = "Riya-Shubham";
-// console.log(title.innerText);
+
 
 // also we can use getattribute or setattribute when we use innerHTML for changing tags and other things.
 
