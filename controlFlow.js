@@ -1,4 +1,4 @@
-let friends = ["Riya","Saurabh","Tanu","Himanshi","Myansha"];
+let friends = ["name1","name2","name3","name4","name5"];
 // console.log("This statement runs before the for loop !!!");
 
 //This is normal for loop..
